@@ -1,0 +1,12 @@
+%html
+  %head
+    %link(rel="stylesheet" type="text/css" href="styles.css")
+  %body
+    .header
+      %h1 File Sharing Service Demo built on StorageGRID Webscale
+    .content
+      %p #{@sender} has shared you a file with you (#{@size} MB):
+      %p(style="white-space: pre-wrap") #{@message}
+      %a(href="/#{@key}/download")> #{@filename}
+    .footer
+      %p NetApp Insight 2016

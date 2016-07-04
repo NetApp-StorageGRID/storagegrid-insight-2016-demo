@@ -1,0 +1,30 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    aws-sdk (2.3.19)
+      aws-sdk-resources (= 2.3.19)
+    aws-sdk-core (2.3.19)
+      jmespath (~> 1.0)
+    aws-sdk-resources (2.3.19)
+      aws-sdk-core (= 2.3.19)
+    haml (4.0.7)
+      tilt
+    jmespath (1.2.4)
+      json_pure (>= 1.8.1)
+    json_pure (2.0.1)
+    rack (1.6.4)
+    rack-protection (1.5.3)
+      rack
+    sinatra (1.4.7)
+      rack (~> 1.5)
+      rack-protection (~> 1.4)
+      tilt (>= 1.3, < 3)
+    tilt (2.0.5)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  aws-sdk (~> 2)
+  haml
+  sinatra

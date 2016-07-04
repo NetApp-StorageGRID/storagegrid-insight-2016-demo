@@ -1,0 +1,21 @@
+%html
+  %head
+    %link(rel="stylesheet" type="text/css" href="styles.css")
+  %body
+    .header
+      %h1 File Sharing Service Demo built on StorageGRID Webscale
+    .content
+      %form(action="/upload" method="post" enctype='multipart/form-data')
+        %fieldset
+          %label(for='sender') Your name:
+          %input(type='text' required=true minlength='3' maxlength='50' placeholder='Enter your name' name='sender')
+          %br
+          %label(for='message') Message:
+          %textarea(required=true rows=5 maxlength='250' placeholder='Enter your message here' name='message')
+          %br
+          %input(type='file' name='file')
+          %br
+          %br
+          %input(type='submit' value='Share file' class='button')
+    .footer
+      %p Note: Files will be auto-deleted after 30 days.
