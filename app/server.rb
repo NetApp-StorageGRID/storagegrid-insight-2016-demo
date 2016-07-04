@@ -19,8 +19,7 @@ post "/upload" do
   s3.bucket(bucket).object(@key).put(
     body: params['file'][:tempfile].read,
     server_side_encryption: 'AES256',
-    metadata: {'sender' => params['sender'],
-               'message' => Base64.strict_encode64(params['message']),
+    metadata: {'sender' => params['sender'], 'message' => Base64.strict_encode64(params['message']),
                'filename' => params['file'][:filename]}
   )
   haml :success
@@ -29,9 +28,8 @@ end
 get "/:id" do
   @key = params[:id]
   object = s3.bucket(bucket).object(@key)
-  @sender = object.metadata['sender']
-  @message = Base64.strict_decode64(object.metadata['message'])
-  @filename = object.metadata['filename']
+  metadata = object.metadata
+  @sender, @filename, @message = metadata['sender'], metadata['filename'], Base64.strict_decode64(metadata['message'])
   @size = (object.content_length.to_i / 1024.0 / 1024.0).round(1)
   haml :download
 end
