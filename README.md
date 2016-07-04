@@ -1,4 +1,4 @@
-# Insight 2015 Demo Application
+# StorageGRID Webscale Demo Application for NetApp Insight 2016
 A simple demo application for session "Building highly scalable applications on StorageGRID Webscale" at [NetApp Insight 2016](http://www.netapp-insight.com).
 
 # Run
