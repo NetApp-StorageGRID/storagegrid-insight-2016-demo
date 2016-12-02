@@ -1,21 +1,27 @@
+!!! 5
 %html
   %head
-    %link(rel="stylesheet" type="text/css" href="styles.css")
+    %link(rel="stylesheet" type="text/css" href="bootstrap.min.css")
+    %script(src="jquery.min.js")
+    %script(src="bootstrap.min.js")
+    %meta(charset="utf-8")
+    %meta(name="viewport" content="width=device-width, initial-scale=1")
   %body
-    .header
+    .container
       %h1 File Sharing Service Demo built on StorageGRID Webscale
-    .content
+    .container
       %form(action="/upload" method="post" enctype='multipart/form-data')
-        %fieldset
+        .form-group
           %label(for='sender') Your name:
-          %input(type='text' required=true minlength='3' maxlength='50' placeholder='Enter your name' name='sender')
-          %br
+          %input.form-control(type='text' required=true minlength='3' maxlength='50' placeholder='Enter your name' name='sender')
+        .form-group
           %label(for='message') Message:
-          %textarea(required=true rows=5 maxlength='250' placeholder='Enter your message here' name='message')
-          %br
+          %textarea.form-control(required=true rows=5 maxlength='250' placeholder='Enter your message here' name='message')
+        .form-group
+          %label(for='file') Select File:
           %input(type='file' name='file')
-          %br
-          %br
-          %input(type='submit' value='Share file' class='button')
-    .footer
-      %p Note: Files will be auto-deleted after 30 days.
+        %button.btn.btn-default(type='submit')Share file
+    .container
+      %small Note: Files will be auto-deleted after 30 days.
+
+

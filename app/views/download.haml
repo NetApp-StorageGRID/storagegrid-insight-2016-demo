@@ -1,12 +1,19 @@
+!!! 5
 %html
   %head
-    %link(rel="stylesheet" type="text/css" href="styles.css")
+    %link(rel="stylesheet" type="text/css" href="bootstrap.min.css")
+    %script(src="jquery.min.js")
+    %script(src="bootstrap.min.js")
+    %meta(charset="utf-8")
+    %meta(name="viewport" content="width=device-width, initial-scale=1")
   %body
-    .header
+    .container
       %h1 File Sharing Service Demo built on StorageGRID Webscale
-    .content
-      %p #{@sender} has shared you a file with you (#{@size} MB):
-      %p(style="white-space: pre-wrap") #{@message}
-      %a(href="/#{@key}/download")> #{@filename}
-    .footer
-      %p NetApp Insight 2016
+    .container
+      .panel.panel-default
+        .panel-heading #{@sender} has shared you a file with you (#{@size} MB):
+        .panel-body #{@message}
+        .panel-footer
+          %a(href="/#{@key}/download")> #{@filename}
+    .container
+      %small NetApp Insight 2016
